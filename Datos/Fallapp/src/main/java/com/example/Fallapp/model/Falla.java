@@ -9,19 +9,19 @@ public class Falla {
     @Id
     private String id;
     private Long objectid;
-    private Long idFalla;
+    private Long id_falla;
     private String nombre;
     private String seccion;
     private String fallera;
     private String presidente;
-    private String artistaNombre;
+    private String artista;
     private String lema;
-    private Integer anyoFundacion;
+    private Integer anyo_fundacion;
     private String distintivo;
     private String boceto;
     private Integer experim;
-    private Double lon;
-    private Double lat;
+    private  Object geo_shape;
+    private Object geo_point_2d;
 
     // Relación ManyToOne con Artista (por id)
     private String artistaId;
@@ -30,35 +30,33 @@ public class Falla {
     }
 
     public Falla(Long objectid,
-                 Long idFalla,
+                 Long id_Falla,
                  String nombre,
                  String seccion,
                  String fallera,
                  String presidente,
-                 String artistaNombre,
+                 String artista,
                  String lema,
-                 Integer anyoFundacion,
+                 Integer anyo_fundacion,
                  String distintivo,
                  String boceto,
                  Integer experim,
-                 Double lon,
-                 Double lat,
-                 String artistaId) {
+                 Object geo_shape,
+                 Object geo_location) {
         this.objectid = objectid;
-        this.idFalla = idFalla;
+        this.id_falla = id_Falla;
         this.nombre = nombre;
         this.seccion = seccion;
         this.fallera = fallera;
         this.presidente = presidente;
-        this.artistaNombre = artistaNombre;
+        this.artista = artista;
         this.lema = lema;
-        this.anyoFundacion = anyoFundacion;
+        this.anyo_fundacion = anyo_fundacion;
         this.distintivo = distintivo;
         this.boceto = boceto;
         this.experim = experim;
-        this.lon = lon;
-        this.lat = lat;
-        this.artistaId = artistaId;
+        this.geo_shape = geo_shape;
+        this.geo_point_2d = geo_location;
     }
 
     public String getId() {
@@ -77,12 +75,12 @@ public class Falla {
         this.objectid = objectid;
     }
 
-    public Long getIdFalla() {
-        return idFalla;
+    public Long getId_falla() {
+        return id_falla;
     }
 
-    public void setIdFalla(Long idFalla) {
-        this.idFalla = idFalla;
+    public void setId_falla(Long id_falla) {
+        this.id_falla = id_falla;
     }
 
     public String getNombre() {
@@ -118,11 +116,11 @@ public class Falla {
     }
 
     public String getArtistaNombre() {
-        return artistaNombre;
+        return artista;
     }
 
     public void setArtistaNombre(String artistaNombre) {
-        this.artistaNombre = artistaNombre;
+        this.artista = artistaNombre;
     }
 
     public String getLema() {
@@ -133,12 +131,12 @@ public class Falla {
         this.lema = lema;
     }
 
-    public Integer getAnyoFundacion() {
-        return anyoFundacion;
+    public Integer getAnyo_fundacion() {
+        return anyo_fundacion;
     }
 
-    public void setAnyoFundacion(Integer anyoFundacion) {
-        this.anyoFundacion = anyoFundacion;
+    public void setAnyo_fundacion(Integer anyo_fundacion) {
+        this.anyo_fundacion = anyo_fundacion;
     }
 
     public String getDistintivo() {
@@ -165,28 +163,21 @@ public class Falla {
         this.experim = experim;
     }
 
-    public Double getLon() {
-        return lon;
+    public Object getGeo_shape() {
+        return geo_shape;
     }
 
-    public void setLon(Double lon) {
-        this.lon = lon;
+    public void setGeo_shape(Object geo_shape) {
+        this.geo_shape = geo_shape;
     }
 
-    public Double getLat() {
-        return lat;
+    public Object getGeo_point_2d() {
+        return geo_point_2d;
     }
 
-    public void setLat(Double lat) {
-        this.lat = lat;
+    public void setGeo_point_2d(Object geo_point_2d) {
+        this.geo_point_2d = geo_point_2d;
     }
 
-    public String getArtistaId() {
-        return artistaId;
-    }
-
-    public void setArtistaId(String artistaId) {
-        this.artistaId = artistaId;
-    }
 }
 
