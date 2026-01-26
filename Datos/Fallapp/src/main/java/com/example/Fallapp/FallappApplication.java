@@ -11,4 +11,6 @@ public class FallappApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FallappApplication.class, args);
 	}
+
 }
+

@@ -58,10 +58,6 @@ public class FallaController {
         return fallaRepository.findBySeccion(seccion);
     }
 
-    @GetMapping("/artista/{artistaId}")
-    public List<Falla> obtenerPorArtista(@PathVariable String artistaId) {
-        return fallaRepository.findByArtistaId(artistaId);
-    }
 
     @GetMapping("/buscar")
     public List<Falla> buscarPorLema(@RequestParam("lema") String lema) {
