@@ -30,6 +30,16 @@ function renderList(filter=''){
 
   for(const ev of filtered){
     const card = document.createElement('div'); card.className='event-card';
+    
+    // Imagen del evento
+    const eventImage = document.createElement('div'); eventImage.className='event-image';
+    const img = document.createElement('img');
+    img.src = ev.image || '../img/fallap_logo.png';
+    img.alt = ev.name || 'Evento';
+    img.onerror = function() { this.style.display='none'; this.parentElement.classList.add('no-image'); };
+    eventImage.appendChild(img);
+    
+    const cardContent = document.createElement('div'); cardContent.className='event-card-content';
     const left = document.createElement('div');
     const title = document.createElement('strong'); title.textContent = ev.name || '(sin nombre)';
     const meta = document.createElement('div'); meta.className='event-meta';
@@ -47,7 +57,11 @@ function renderList(filter=''){
 
     actions.appendChild(btnView); actions.appendChild(btnEdit); actions.appendChild(btnDel);
 
-    card.appendChild(left); card.appendChild(actions);
+    cardContent.appendChild(left); 
+    cardContent.appendChild(actions);
+    
+    card.appendChild(eventImage);
+    card.appendChild(cardContent);
     eventsEl.appendChild(card);
   }
 }
